@@ -49,8 +49,10 @@ class SearchView extends StatelessWidget {
                   'Total Results : 10',
                   style: getBodyStyle(),
                 ),
+               
               ],
             ),
+             Gap(10),
             const Expanded(child: NewsListBiulder())
           ],
         ),
