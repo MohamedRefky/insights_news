@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insights_news/core/services/local_storage.dart';
-import 'package:insights_news/features/splash_view.dart';
+import 'package:insights_news/core/utils/coloes.dart';
+import 'package:insights_news/features/Upload/upload_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,9 +14,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashView(),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const UploadView(),
+        theme: ThemeData(
+            scaffoldBackgroundColor: AppColors.background,
+            appBarTheme: AppBarTheme(backgroundColor: AppColors.background),
+            bottomNavigationBarTheme: BottomNavigationBarThemeData(
+              type: BottomNavigationBarType.fixed,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              backgroundColor: AppColors.background,
+              selectedItemColor: AppColors.primary,
+              unselectedItemColor: AppColors.grey,
+            )));
   }
 }

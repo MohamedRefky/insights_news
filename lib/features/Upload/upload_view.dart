@@ -10,6 +10,7 @@ import 'package:insights_news/core/utils/coloes.dart';
 import 'package:insights_news/core/utils/text_styels.dart';
 import 'package:insights_news/core/widgets/custom_btn.dart';
 import 'package:insights_news/core/widgets/nav_bar_widget.dart';
+
 String? path;
 String name = '';
 
@@ -24,9 +25,7 @@ class _UploadViewState extends State<UploadView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
-      appBar: AppBar(
-        backgroundColor: AppColors.background,
+      appBar: AppBar( 
         actions: [
           TextButton(
             onPressed: () {
@@ -45,7 +44,10 @@ class _UploadViewState extends State<UploadView> {
                     context, 'Please Upload Your Image and Enter Your Name');
               }
             },
-            child: const Text('Done'),
+            child: Text(
+              'Done',
+              style: getBodyStyle(color: AppColors.primary),
+            ),
           ),
         ],
       ),
@@ -61,7 +63,7 @@ class _UploadViewState extends State<UploadView> {
                 backgroundColor: AppColors.primary,
                 backgroundImage: (path != null)
                     ? FileImage(File(path!)) as ImageProvider
-                    : const AssetImage('assets/user.png'),
+                    : const AssetImage('assets/user.jpg'),
               ),
               const Gap(30),
               CustomButton(
@@ -76,7 +78,8 @@ class _UploadViewState extends State<UploadView> {
                       });
                     }
                   });
-                }, width: double.infinity,
+                },
+                width: double.infinity,
               ),
               const Gap(10),
               CustomButton(
@@ -94,7 +97,8 @@ class _UploadViewState extends State<UploadView> {
                       });
                     }
                   });
-                }, width: double.infinity,
+                },
+                width: double.infinity,
               ),
               Divider(
                 height: 40,
@@ -102,6 +106,8 @@ class _UploadViewState extends State<UploadView> {
               ),
 
               TextFormField(
+                cursorColor: AppColors.primary,
+                style: getBodyStyle(),
                 onChanged: (value) {
                   setState(() {
                     name = value;
