@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insights_news/core/utils/coloes.dart';
 
-
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,

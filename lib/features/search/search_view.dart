@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:insights_news/core/utils/coloes.dart';
 import 'package:insights_news/core/utils/text_styels.dart';
-import 'package:insights_news/features/home/widget/NewsList.dart';
+import 'package:insights_news/features/home/presentation/widget/NewsList.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});

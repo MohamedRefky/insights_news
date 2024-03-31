@@ -25,7 +25,7 @@ class _UploadViewState extends State<UploadView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
+      appBar: AppBar(
         actions: [
           TextButton(
             onPressed: () {

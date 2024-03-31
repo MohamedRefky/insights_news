@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insights_news/core/services/local_storage.dart';
 import 'package:insights_news/core/utils/coloes.dart';
 import 'package:insights_news/features/Upload/upload_view.dart';
+import 'package:insights_news/features/home/presentation/manager/News_cubit.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,19 +16,22 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: const UploadView(),
-        theme: ThemeData(
-            scaffoldBackgroundColor: AppColors.background,
-            appBarTheme: AppBarTheme(backgroundColor: AppColors.background),
-            bottomNavigationBarTheme: BottomNavigationBarThemeData(
-              type: BottomNavigationBarType.fixed,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              backgroundColor: AppColors.background,
-              selectedItemColor: AppColors.primary,
-              unselectedItemColor: AppColors.grey,
-            )));
+    return BlocProvider(
+      create: (context) => NewsCubit(),
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: const UploadView(),
+          theme: ThemeData(
+              scaffoldBackgroundColor: AppColors.background,
+              appBarTheme: AppBarTheme(backgroundColor: AppColors.background),
+              bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                type: BottomNavigationBarType.fixed,
+                showSelectedLabels: false,
+                showUnselectedLabels: false,
+                backgroundColor: AppColors.background,
+                selectedItemColor: AppColors.primary,
+                unselectedItemColor: AppColors.grey,
+              ))),
+    );
   }
 }

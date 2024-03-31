@@ -7,7 +7,6 @@ import 'package:insights_news/core/utils/text_styels.dart';
 import 'package:insights_news/core/widgets/nav_bar_widget.dart';
 import 'package:insights_news/features/Upload/upload_view.dart';
 
-
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
 

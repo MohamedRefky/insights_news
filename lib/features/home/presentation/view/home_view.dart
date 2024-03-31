@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:insights_news/core/utils/coloes.dart';
 import 'package:insights_news/core/utils/text_styels.dart';
-import 'package:insights_news/features/home/widget/NewsList.dart';
-import 'package:insights_news/features/home/widget/home_header.dart';
+import 'package:insights_news/features/home/presentation/widget/NewsList.dart';
+import 'package:insights_news/features/home/presentation/widget/home_header.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeView extends StatefulWidget {
@@ -97,10 +97,10 @@ class _HomeViewState extends State<HomeView> {
                 const Gap(10),
                 const Expanded(
                     child: TabBarView(children: [
-                  NewsListBiulder(),
-                  NewsListBiulder(),
-                  NewsListBiulder(),
-                  NewsListBiulder(),
+                  NewsListBiulder(Category: 'Science',),
+                  NewsListBiulder(Category: 'Entertainment'),
+                  NewsListBiulder(Category: 'Sports'),
+                  NewsListBiulder(Category: 'Business'),
                 ]))
               ],
             ),

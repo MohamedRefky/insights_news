@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insights_news/core/utils/coloes.dart';
-import 'package:insights_news/features/home/view/home_view.dart';
+import 'package:insights_news/features/home/presentation/view/home_view.dart';
 import 'package:insights_news/features/profile/view/profile_view.dart';
 import 'package:insights_news/features/search/search_view.dart';
 import 'package:insights_news/features/source/source_view.dart';
@@ -59,7 +59,7 @@ class NavBarWidgetState extends State<NavBarWidget> {
                 icon: SvgPicture.asset('assets/sources.svg'),
                 label: 'source'),
             BottomNavigationBarItem(
-                  activeIcon: SvgPicture.asset(
+                activeIcon: SvgPicture.asset(
                   'assets/Profile.svg',
                   colorFilter:
                       ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
