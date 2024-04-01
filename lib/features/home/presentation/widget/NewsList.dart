@@ -1,6 +1,4 @@
 import 'dart:js';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -11,7 +9,8 @@ import 'package:insights_news/features/home/presentation/manager/News_state.dart
 
 class NewsListBiulder extends StatefulWidget {
   const NewsListBiulder({
-    super.key, required this.Category,
+    super.key,
+    required this.Category,
   });
   final String Category;
   @override
