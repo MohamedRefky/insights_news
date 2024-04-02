@@ -23,8 +23,10 @@ TextStyle getBodyStyle(
 }
 
 TextStyle getSmallStyle(
+  
     {Color? color, double? fontSize, FontWeight? fontWeight}) {
   return TextStyle(
+    
     fontFamily: GoogleFonts.poppins().fontFamily,
     color: color ?? AppColors.grey,
     fontSize: fontSize ?? 14,

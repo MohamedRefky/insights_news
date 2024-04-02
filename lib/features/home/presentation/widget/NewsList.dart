@@ -1,4 +1,3 @@
-import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -82,7 +81,7 @@ class _NewsListBiulderState extends State<NewsListBiulder> {
                               Text(
                                 news?[index].author ?? '',
                                 style: getSmallStyle(
-                                    color: AppColors.white, fontSize: 15),
+                                    color: AppColors.white, fontSize: 13),
                               )
                             ],
                           )

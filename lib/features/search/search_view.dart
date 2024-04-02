@@ -52,7 +52,7 @@ class SearchView extends StatelessWidget {
               ],
             ),
             const Gap(10),
-            const Expanded(child: NewsListBiulder())
+            const Expanded(child: NewsListBiulder(Category: 'Sports',))
           ],
         ),
       ),
