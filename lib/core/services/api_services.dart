@@ -19,4 +19,21 @@ class ApiServices {
     }
     return null;
   }
+   static Future<NewsModel?> getNewsBySearch(String query) async {
+    try {
+      var url = Uri.parse(
+         '$baseUrl$headlinesEndpoint?q=$query&apiKey=$apiKey');
+      var res = await http.get(url);
+      if (res.statusCode == 200) {
+        return NewsModel.fromJson(json.decode(res.body));
+      }
+    } catch (e) {
+      //log(e.toString());
+      print(e.toString());
+    }
+    return null;
+  }
 }
+
+
+

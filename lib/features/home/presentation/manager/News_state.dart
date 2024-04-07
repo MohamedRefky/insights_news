@@ -10,13 +10,24 @@ class NewsByCategorySuccessState extends NewsStates {
   final NewsModel model;
   NewsByCategorySuccessState(this.model);
 }
-
 class NewsByCategoryErrorState extends NewsStates {
   final String error;
 
   NewsByCategoryErrorState(this.error);
 }
+// Search
+class NewsBySearchLoadingState extends NewsStates {}
 
+class NewsBySearchSuccessState extends NewsStates {
+  final NewsModel model;
+  NewsBySearchSuccessState(this.model);
+}
+
+class NewsBySearchErrorState extends NewsStates {
+  final String error;
+
+  NewsBySearchErrorState(this.error);
+}
 // get source
 class NewsBySourceLoadingState extends NewsStates {}
 

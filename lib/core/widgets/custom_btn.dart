@@ -6,21 +6,24 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    required this.width,
+    this.width,
+    this.color,
     this.height,
   });
   final String text;
+  final Color? color;
   final Function() onPressed;
-  final double width;
+  final double? width;
   final double? height;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height ?? 50,
-      width: width,
+      height: height ?? 45,
+      width: width ?? 250,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.containerBg,
+              backgroundColor: color ?? AppColors.containerBg,
               foregroundColor: AppColors.white,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:insights_news/core/utils/coloes.dart';
 import 'package:insights_news/core/utils/text_styels.dart';
-import 'package:insights_news/features/home/presentation/widget/NewsList.dart';
+import 'package:insights_news/features/home/presentation/manager/News_cubit.dart';
+import 'package:insights_news/features/search/widget/new_Searh_Bilder.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -22,6 +24,10 @@ class SearchView extends StatelessWidget {
         child: Column(
           children: [
             TextFormField(
+              style: getBodyStyle(color: AppColors.grey),
+              onChanged: (value) {
+                context.read<NewsCubit>().getNewsBySearch(value);
+              },
               cursorColor: AppColors.grey,
               decoration: InputDecoration(
                 hintText: 'Search for news',
@@ -42,17 +48,13 @@ class SearchView extends StatelessWidget {
               ),
             ),
             const Gap(20),
-            Row(
+            const Row(
               children: [
-                const Gap(3),
-                Text(
-                  'Total Results : 10',
-                  style: getBodyStyle(),
-                ),
+                Gap(3),
               ],
             ),
             const Gap(10),
-            const Expanded(child: NewsListBiulder(Category: 'Sports',))
+            const Expanded(child: NewsSearchBiulder())
           ],
         ),
       ),
